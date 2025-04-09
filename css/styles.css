@@ -398,3 +398,33 @@ footer {
     color: white;
     text-align: center;
 }
+/* Background image for the welcome section */
+.welcome-section {
+  background-image: url('images/backgrounds/hero-background.png'); /* Path to your image */
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  padding: 50px 20px; /* Adds spacing inside the section */
+  text-align: center; /* Centers the text */
+  color: white; /* Optional: Makes the text white for better contrast */
+}
+
+/* Menu bar styling */
+.menu-bar {
+  background-color: #ff6b6b; /* Same color as the welcome text */
+  color: white; /* Makes the text white */
+  padding: 10px 20px; /* Adds spacing inside the menu bar */
+  display: flex; /* Ensures the menu items are aligned horizontally */
+  justify-content: center; /* Centers the menu items */
+}
+
+.menu-bar a {
+  color: white; /* Ensures menu links are white */
+  text-decoration: none; /* Removes underline from links */
+  margin: 0 15px; /* Adds spacing between menu items */
+  font-weight: bold; /* Makes the text bold */
+}
+
+.menu-bar a:hover {
+  text-decoration: underline; /* Adds underline on hover for better UX */
+}
