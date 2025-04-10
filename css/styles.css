@@ -428,3 +428,39 @@ footer {
 .menu-bar a:hover {
   text-decoration: underline; /* Adds underline on hover for better UX */
 }
+/* Floating Social Media Bar */
+.social-sidebar {
+    position: fixed; /* Keeps the sidebar fixed on the screen */
+    left: 20px; /* Positions the sidebar 20px from the left edge */
+    top: 50%; /* Centers the sidebar vertically */
+    transform: translateY(-50%); /* Adjusts vertical alignment */
+    display: flex; /* Ensures the buttons are stacked vertically */
+    flex-direction: column; /* Aligns the buttons in a column */
+    gap: 1rem; /* Adds spacing between the logos */
+    z-index: 1000; /* Ensures the sidebar stays above other elements */
+}
+
+.social-sidebar .social-icon {
+    display: block; /* Ensures the links are block-level elements */
+    background: none; /* Removes any background */
+    border: none; /* Removes any border */
+    padding: 0; /* Removes any padding */
+}
+
+.social-sidebar .social-icon img {
+    width: 40px; /* Sets the width of each logo */
+    height: auto; /* Maintains the aspect ratio of the logo */
+    display: block; /* Ensures the image is block-level */
+    transition: transform 0.3s ease; /* Adds hover effects */
+}
+
+.social-sidebar .social-icon:hover img {
+    transform: scale(1.2); /* Enlarges the logo slightly on hover */
+}
+
+/* Hide floating bar on mobile */
+@media (max-width: 768px) {
+    .social-sidebar {
+        display: none; /* Hides the sidebar on smaller screens */
+    }
+}
