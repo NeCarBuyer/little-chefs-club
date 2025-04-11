@@ -125,8 +125,8 @@ document.addEventListener("DOMContentLoaded", function () {
             this.style.transform = "scale(1)";
         });
     });
-});
-// Wait for the DOM to load
+
+  // Wait for the DOM to load
 document.addEventListener("DOMContentLoaded", function () {
     // Select hamburger menu and navigation links
     const hamburger = document.querySelector(".hamburger");

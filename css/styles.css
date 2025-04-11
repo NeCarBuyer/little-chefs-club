@@ -597,10 +597,33 @@ footer {
         padding: 0; /* Reset padding */
     }
 }
-/* General Reset */
-body {
+/* Root Variables */
+:root {
+    --primary: #ff6b6b;
+    --secondary: #4ecdc4;
+    --accent: #ffe66d;
+    --dark: #2d3436;
+    --light: #f9f9f9;
+    --success: #6bcd69;
+    --warning: #ffa502;
+    --h1-size: 2.8rem;
+    --h2-size: 2.2rem;
+    --body-size: 1.1rem;
+}
+
+/* Base Styles */
+* {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: var(--light);
+    overflow-x: hidden;
 }
 
 /* Navigation Bar */
@@ -620,7 +643,7 @@ body {
     display: none; /* Hidden by default */
     font-size: 1.5rem;
     cursor: pointer;
-    color: #333;
+    color: #fff;
 }
 
 .nav-links {
@@ -666,7 +689,205 @@ body {
 
     .nav-links a {
         text-align: center; /* Center links */
-        padding: 0.5rem 0;
+        padding: 0.5rem 0; /* Add padding */
+        font-size: 1.2rem;
+    }
+}
+
+/* Desktop-specific styles */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none; /* Hide hamburger menu on desktop */
+    }
+
+    .nav-links {
+        display: flex; /* Ensure the original nav links are visible */
+        flex-direction: row; /* Align links horizontally */
+        gap: 2rem;
+        position: static; /* Reset positioning */
+        background: none; /* Remove background */
+        box-shadow: none; /* Remove shadow */
+        width: auto; /* Reset width */
+        padding: 0; /* Reset padding */
+    }
+}
+/* General Reset */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Floating Logo Styling */
+.logo {
+    position: fixed;
+    top: 15px;
+    left: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 180px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo img {
+    width: 180px;
+    height: 180px;
+    border-radius: 25%;
+    object-fit: cover;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #4ecdc4;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.hamburger {
+    display: none; /* Hidden by default */
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff6347;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger menu on mobile */
+    }
+
+    .nav-links {
+        display: none; /* Hide navigation links by default */
+        flex-direction: column; /* Stack links vertically */
+        gap: 1rem;
+        background-color: #fff;
+        position: fixed; /* Fixed position for dropdown */
+        top: 0;
+        right: 0;
+        height: 100%; /* Full height dropdown */
+        width: 250px; /* Width of the dropdown */
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        padding: 2rem 1rem;
+        z-index: 999;
+        transform: translateX(100%); /* Initially hidden off-screen */
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-links.active {
+        transform: translateX(0); /* Slide in when active */
+    }
+
+    .nav-links a {
+        text-align: left; /* Align links to the left */
+        padding: 0.5rem 0; /* Add padding */
+        font-size: 1.2rem;
+    }
+}
+
+/* Desktop-specific styles */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none; /* Hide hamburger menu on desktop */
+    }
+
+    .nav-links {
+        display: flex; /* Ensure the original nav links are visible */
+        flex-direction: row; /* Align links horizontally */
+        gap: 2rem;
+        position: static; /* Reset positioning */
+        background: none; /* Remove background */
+        box-shadow: none; /* Remove shadow */
+        width: auto; /* Reset width */
+        padding: 0; /* Reset padding */
+    }
+}
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space between logo and hamburger/menu */
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #4ecdc4; /* Bar color */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none; /* Hidden by default on desktop */
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333; /* Change to a darker color for visibility */
+    background-color: #fff; /* Add a background to make it stand out */
+    padding: 0.5rem; /* Add padding for better clickability */
+    border-radius: 5px; /* Slightly rounded edges */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for visibility */
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger menu on mobile */
+        position: absolute; /* Position it inside the navbar */
+        top: 50%; /* Center vertically */
+        right: 1rem; /* Align to the right */
+        transform: translateY(-50%); /* Adjust for centering */
+    }
+
+    .nav-links {
+        display: none; /* Hide navigation links by default */
+        flex-direction: column; /* Stack links vertically */
+        gap: 1rem;
+        background-color: #fff;
+        position: fixed; /* Fixed position for dropdown */
+        top: 0;
+        right: 0;
+        height: 100%; /* Full height dropdown */
+        width: 250px; /* Width of the dropdown */
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        padding: 2rem 1rem;
+        z-index: 999;
+        transform: translateX(100%); /* Initially hidden off-screen */
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-links.active {
+        transform: translateX(0); /* Slide in when active */
+    }
+
+    .nav-links a {
+        text-align: left; /* Align links to the left */
+        padding: 0.5rem 0; /* Add padding */
         font-size: 1.2rem;
     }
 }
