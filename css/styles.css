@@ -538,3 +538,62 @@ footer {
         padding: 0; /* Reset padding */
     }
 }
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .navbar {
+        position: relative; /* Ensure proper positioning */
+        height: auto; /* Adjust height for mobile */
+        padding: 1rem; /* Add padding */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger icon on mobile */
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--dark);
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .nav-links {
+        display: none; /* Hide navigation links initially */
+        flex-direction: column; /* Stack links vertically */
+        gap: 1rem; /* Add spacing between links */
+        background-color: var(--light); /* Background for dropdown */
+        position: absolute;
+        top: 100%; /* Position below the navbar */
+        right: 0;
+        width: 100%; /* Full width dropdown */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+        padding: 1rem; /* Add padding */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show links when active */
+    }
+
+    .nav-links a {
+        text-align: center; /* Center links */
+        padding: 0.5rem 0; /* Add padding */
+        font-size: 1.2rem; /* Increase font size for readability */
+    }
+}
+
+/* Desktop-specific styles */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none; /* Hide hamburger menu on desktop */
+    }
+
+    .nav-links {
+        display: flex; /* Ensure the original nav links are visible */
+        flex-direction: row; /* Align links horizontally */
+        gap: 2rem; /* Add spacing between links */
+        position: static; /* Reset positioning */
+        background: none; /* Remove background */
+        box-shadow: none; /* Remove shadow */
+        width: auto; /* Reset width */
+        padding: 0; /* Reset padding */
+    }
+}
