@@ -128,10 +128,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // Wait for the DOM to load
 document.addEventListener("DOMContentLoaded", function () {
-    // Hamburger menu toggle
+    // Select hamburger menu and navigation links
     const hamburger = document.querySelector(".hamburger");
     const navLinks = document.querySelector(".nav-links");
 
+    // Add click event listener to the hamburger menu
     hamburger.addEventListener("click", function () {
         navLinks.classList.toggle("active"); // Toggle the 'active' class
     });
